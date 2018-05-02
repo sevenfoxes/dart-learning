@@ -1,0 +1,32 @@
+name: dart_learnin
+version: 0.0.1
+description: >-
+  How to code good and learn to do other things good too.
+author: Scott Nesham <sanesham@gmail.com>
+web:
+  compiler:
+    debug: dartdevc
+
+environment:
+  sdk: '>=2.0.0-dev.48.0 <2.0.0'
+
+dependencies:
+  angular: ^5.0.0-alpha+11
+  angular_components: ^0.9.0-alpha+11
+  english_words: ^2.0.4
+
+dev_dependencies:
+  angular_test: ^2.0.0-alpha
+  build_runner: ^0.8.6
+  build_test: ^0.10.2
+  build_web_compilers: ^0.3.7
+  test: ^0.12.30
+
+transformers:
+- angular:
+    entry_points:
+      - web/main.dart
+      - test/**_test.dart
+- test/pub_serve:
+    $include: test/**_test.dart
+- dart_to_js_script_rewriter
